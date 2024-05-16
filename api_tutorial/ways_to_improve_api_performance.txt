@@ -1,0 +1,72 @@
+It's important to note that optimization should not be the first step in your
+process. Optimization is powerful, but it can lead to unnecessary complexity if
+done prematurely. The first step should always be to identify the actual
+bottlenecks through load testing and profiling requests. Only begin optimization
+once you've confirmed that an API endpoint has performance issues.
+
+Optimization challenges:-
+1. Cost
+2. Security Risk
+3. Technological Complexity
+4. Inadequate Caching Mechanism
+5. Inefficient & Complex Code
+6. API Documentation
+7. Complex Database Queries
+
+Ways to optimize API performance:-
+1. Caching - The most effective ways to speed up APIs. Store the result of an
+expensive computation so that we can use it again later without needing to redo
+the computation.
+        If you have an endpoint that is frequently accessed with the same request
+parameters, you can avoid repeated database hits by caching the response in Redis
+or Memcached.
+
+2. Connection Pool - This technique involves maintaining a pool of open connections,
+rather than opening a new database connection for each API call. Creating a new
+connection each time involves a lot of handshake protocols and setup which can slow
+down your API. This reuse of connections can greatly improve throughput.
+
+Note:- If you are using a serverless architecture, connection management
+can be a bit more challenging. This is because each serverless function instance
+typically opens its own database connection, and because serverless can scale
+rapidly, This could potentially lead to a large number of open connections that
+can overwhelm the database. Solutions like AWS RDS Proxy and Azure SQL Database
+serverless are designed to handle this situation and manage connection pooling for you.
+
+3. N+1 query problem - Closely related to database, the N+1 problem is a common
+inefficiency that can occur when accessing data of an entity and its related
+entities. For example, let's say you are building an API endpoint to fetch blog
+posts and their comments. An N+1 problem would occur if you first made a query
+to fetch the posts, and then for each post, you made another query to fetch its
+comments. If you have N posts, this would result in 1 query for the posts plus
+N queries for the comments, hence the term "N+1 problem".
+        To avoid this, it's more efficient to fetch the data in a single query,
+or in some cases, two queries: one to fetch the posts, and one to fetch all the
+comments for those posts. This avoids making a separate query for each post's
+comments and can significantly reduce the number of round trips to the database,
+improving performance.
+
+4. Pagination - If API response returns a large amount of data, it can slow things
+down. Instead, break the response into smaller, more manageable pages using limit
+and offset parameters. This can speed up data transfer and reduce load on the client
+side.
+
+5. JSON serializers - When returning JSON responses from API, the speed of your
+serialization process can make a noticeable difference in response times. Consider
+using a fast serialization library to minimize the time spent converting data
+into JSON format.
+
+6. Compression - By enabling compression on large API response payloads, you
+can reduce the amount of data transferred over the network. The client then
+decompresses the data. Nowadays, there are even more efficient algorithms like
+Brotli that provide better compression ratios. Also, many Content Delivery Networks
+(CDNs) like Cloudflare can handle compression for you,
+
+7. Asynchronous logging - In many applications, the time it takes to write logs is
+negligible. However, in high-throughput systems where every millisecond counts, the
+time taken to write logs can add up. In such cases, asynchronous logging can help.
+This involves the main application thread quickly placing the log entry into an
+in-memory buffer, while a separate logging thread writes the log entries to the file
+or sends them to the logging service. Just keep in mind that with asynchronous logging,
+there's a small chance you might lose some logs if your application crashes before the
+logs have been written.

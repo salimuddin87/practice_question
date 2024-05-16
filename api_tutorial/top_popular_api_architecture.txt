@@ -1,0 +1,34 @@
+1. SOAP -> XML-based for enterprise application
+Example:- Used in financial services and payment gateways
+where security and reliability are key.
+
+2. REST-ful -> Resource-based (JSON) for web servers
+Easy to implement, and use HTTP methods. Good for real-time
+data or operate with a highly connected data model.
+Example:- Used by Twitter and YouTube
+
+3. GraphQL -> Query language reduce network load
+Allows clients to ask for specific data as they need. This means no more
+over-fetching or under-fetching of data. This leads to more efficient network
+communication and faster responses. It also requires more processing on the
+server side due to its flexible querying capabilities.
+Example:- Facebook, GitHub, Shopify
+
+4. gRPC -> High performance for microservices
+It's modern, high-performance, and uses Protocol Buffers. Netflix use gRPC to
+handle their immense iter-service communication. However, if you are dealing with
+browser clients, gRPC might pose some challenges due to limited browser support.
+Example:- Netflix
+
+5. WebSocket -> Bi-directional for low-latency data exchange
+It is all about real-time, bidirectional, and persistent connections.
+It's perfect for live chat applications and real-time gaming, where
+low-latency data exchange is crucial.
+Example:-
+
+6. Webhook -> Asynchronous for event-driven application
+It's all about event-driven, HTTP callbacks, and asynchronous operation.
+For instance, GitHub uses webhooks to notify your other systems whenever
+a new commit is pushed. But, if you need synchronous communication or
+immediate response, webhook might not be best bet.
+Example:- GitHub
