@@ -85,3 +85,14 @@ is a field that returns a Vendor type, we add fields from that type as well, lik
 * A resolver function retrieves the data for a specific field in our schema. These functions 
   have access to various data sources: databases, REST APIs, even text files or JSON. These 
   data sources don't need to live within the GraphQL server.
+* The Query type serves as an entry point into the GraphQL schema.
+* [ID] mentioned in a class translates the c# property into an ID GraphQL type.
+  ```
+  pulic class Playlist
+  { 
+    [ID]
+    public string Id { get; }
+  
+    public string? Name { get; set; }
+  }
+  ```
