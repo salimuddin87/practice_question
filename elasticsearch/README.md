@@ -2,6 +2,11 @@
 Elasticsearch (ES) is a combination of open-source, distributed, highly scalable 
 data store and Lucene- a search engine that supports extremely fast full-text search.
 
+Elasticsearch is an open-search analytics solution that emphasizes speed, scale, and relevance. Since its initial 
+release, Elasticsearch has quickly become the most popular and commonly used tool for log analytics, full-text search, 
+security intelligence, business analytics, and operational intelligence use cases. With services like ingestion, 
+enrichment, storage, analysis, and visualization, the tool is transforming how the world uses data.
+
 ### Elasticsearch Components
 #### Cluster
    One or more servers collectively providing indexing and search capabilities form an 

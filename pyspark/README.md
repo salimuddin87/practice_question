@@ -1,3 +1,6 @@
+## Practice material
+* https://www.interviewbit.com/pyspark-interview-questions/
+
 ## PySpark
 * PySpark is an open-source unified analytics engine for large-scale data processing. It provides high-level APIs in Java,
 Scala, Python, and R, and an optimized engine that supports general execution graphs. It also supports powerful 

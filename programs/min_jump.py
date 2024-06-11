@@ -25,22 +25,22 @@ Expected Space Complexity: O(1)
 
 class Solution:
     def minJumps(self, arr, n):
-        # code here
-        res = jump = 0
-        count_jump = 0
-        max_jump_index = 0
-        i = 0
-        while i < n:
-            if arr[i] == 0:
-                return -1
-            for j in range(i+1, arr[i]):
-                jump = j + arr[j]
-                if res < jump:
-                    res = jump
-                    max_jump_index = j
-            i = max_jump_index
-            count_jump += 1
-        return count_jump
+        if n == 1:
+            return 0
+
+        index = end = jump = 0
+        max_i = arr[0]
+        while index <= end:
+            if (index + arr[index]) > max_i:
+                max_i = index + arr[index]
+            if index == end:
+                if max_i < n-1:
+                    end = max_i
+                    jump += 1
+                else:
+                    return jump + 1
+            index += 1
+        return -1
 
 
 if __name__ == '__main__':
