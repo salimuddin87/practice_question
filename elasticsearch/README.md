@@ -1,7 +1,4 @@
 ## Elasticsearch 
-Elasticsearch (ES) is a combination of open-source, distributed, highly scalable 
-data store and Lucene- a search engine that supports extremely fast full-text search.
-
 Elasticsearch is an open-search analytics solution that emphasizes speed, scale, and relevance. Since its initial 
 release, Elasticsearch has quickly become the most popular and commonly used tool for log analytics, full-text search, 
 security intelligence, business analytics, and operational intelligence use cases. With services like ingestion, 
@@ -14,7 +11,7 @@ enrichment, storage, analysis, and visualization, the tool is transforming how t
    depending on the use cases.
 #### Node 
    Node is a single physical or virtual machine that holds full or part of your data and 
-   provides computing power for indexing and searching your data.Every node is identified with a 
+   provides computing power for indexing and searching your data. Every node is identified with a 
    unique name. If the node identifier is not specified, a random UUID is assigned as a node 
    identifier at the startup. Every node configuration has the property `cluster.name`. The 
    cluster will be formed automatically with all the nodes having the same `cluster.name` at startup.
@@ -37,7 +34,7 @@ The index name is required to perform the add, update, or delete operations on t
 Document is the piece indexed by Elasticsearch. A document is represented in the JSON format. 
 We can add as many documents as we want into an index.
 #### Mapping Types
-Mappings can be defined as a list of directives given to Elasticseach about how the data is 
+Mappings can be defined as a list of directives given to Elasticsearch about how the data is 
 supposed to be stored and retrieved. It is important to provide mapping information at the 
 time of index creation based on how we want to retrieve our data later. 
 #### Meta Fields
@@ -57,8 +54,10 @@ _ignored, _routing, _meta, _tier.
 3. Numeric - Elasticsearch supports a wide range of numeric type long, integer, short, byte, 
   double, float.
 
-Note:- There are few more data types supported date (to store the date in a wide range of formats), 
-       boolean (true/false, on / off, 1 / 0), IP (to store IP addresses).
+Note:- There are few more data types supported:
+1. date (to store the date in a wide range of formats), 
+2. boolean (true/false, on / off, 1 / 0), 
+3. IP (to store IP addresses).
 
 #### Special Data Types
 1. Geo Point - This data type is used to store geographical location. It accepts latitude and 

@@ -26,15 +26,15 @@ Elasticsearch ensures data reliability through several features, including:
 2. **Sharding** : Data is divided into shards, which can be distributed across multiple nodes. This improves performance and scalability.
 3. **Snapshots and Restores** : Elasticsearch provides a snapshot and restore feature that allows you to create and restore backups of your data. 
 This protects against data loss due to human error or disasters.
-4. **Monitoring and alerting** : Elasticsearch provides many monitoring and alerting features that can help you to identify and address potential data problems.
+4. **Monitoring and Alerting** : Elasticsearch provides many monitoring and alerting features that can help you to identify and address potential data problems.
 5. **Security** : Elasticsearch can be configured with several security features to protect your data from unauthorized access.
 
 ### How do you create, delete, list, and query indices in Elasticsearch?
-Command to create a new index --- PUT /test_index?pretty
-Command to delete an index --- DELETE /test_index?pretty
-Command to list all index --- GET _cat/indices?v
-Command to query an index --- GET test_index/_search?q=*
-Command to query multiple indices --- GET test_index1, test_index2/_search?
+1. Command to create a new index --- PUT /test_index?pretty
+2. Command to delete an index --- DELETE /test_index?pretty
+3. Command to list all index --- GET _cat/indices?v
+4. Command to query an index --- GET test_index/_search?q=*
+5. Command to query multiple indices --- GET test_index1, test_index2/_search?
 
 ### Explain the concept of Elasticsearch mapping.
 In Elasticsearch, a mapping is a JSON object that defines the structure of a document. It specifies the fields that are
