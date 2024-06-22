@@ -21,7 +21,29 @@ Output: 0
 
 
 from typing import List
+# from sys import maxsize
 
 
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        start = end = 0
+        sum = 0
+        l = 0
+        while end < len(nums):
+            sum += nums[end]
+            while sum >= target:
+                if l == 0:
+                    l = end - start + 1
+                else:
+                    l = min(l, end - start + 1)
+                sum -= nums[start]
+                start += 1
+            end += 1
+        return l
+
+
+if __name__ == '__main__':
+    obj = Solution()
+    print(obj.minSubArrayLen(7, [2,3,1,2,4,3]))
+    print(obj.minSubArrayLen(12, [1, 2, 3, 4, 5]))
+    print(obj.minSubArrayLen(5, [1, 1, 1, 1]))
