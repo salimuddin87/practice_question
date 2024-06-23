@@ -18,7 +18,7 @@ class Solution:
         fast = head.next
         while slow != fast:
             if fast is None or fast.next is None:
-                return # no loop found
+                return  # no loop found
             slow = slow.next
             fast = fast.next.next
 
