@@ -50,6 +50,7 @@ class Solution:
 
         # if nums length > 3
 
+
         return result
 
     def threeSum_nlogn(self, nums: List[int]) -> List[List[int]]:
@@ -65,8 +66,8 @@ class Solution:
                 return result
 
         # if nums length > 3
-        for i in range(0, len(nums)-1):
-            for j in range(i+1, len(nums)):
+        for i in range(0, len(nums)-2):
+            for j in range(i+1, len(nums)-1):
                 res_list = []
                 temp = nums[i] + nums[j]
                 if -temp in nums[j+1:]:
